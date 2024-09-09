@@ -44,7 +44,8 @@ module.exports = configure(function (/* ctx */) {
         node: "node20",
       },
 
-      vueRouterMode: "hash", // available values: 'hash', 'history'
+      vueRouterMode: "hash",
+      publicPath: "protfolio_shah", // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,

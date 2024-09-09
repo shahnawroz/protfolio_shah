@@ -88,24 +88,6 @@
       <div class="q-gutter-md text-center">
         <div class="text-h6">© 2024</div>
         <div class="text-h6">Shah Nawrose</div>
-        <div class="social-links">
-          <q-btn
-            flat
-            icon="mdi-linkedin"
-            class="social-btn"
-            href="https://linkedin.com"
-            target="_blank"
-            aria-label="LinkedIn"
-          />
-          <q-btn
-            flat
-            icon="mdi-github"
-            class="social-btn"
-            href="https://github.com"
-            target="_blank"
-            aria-label="GitHub"
-          />
-        </div>
       </div>
     </q-footer>
   </q-layout>
