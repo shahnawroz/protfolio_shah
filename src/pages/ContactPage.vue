@@ -12,11 +12,11 @@
       <!-- Contact Information -->
       <div class="contact-info">
         <div class="contact-item">
-          <q-icon name="mdi-email-outline" size="48px" class="icon-email" />
+          <q-icon name="mdi-email-outline" size="36px" class="icon-email" />
           <span class="contact-text">sh.nawrose@gmail.com</span>
         </div>
         <div class="contact-item">
-          <q-icon name="mdi-phone-outline" size="48px" class="icon-phone" />
+          <q-icon name="mdi-phone-outline" size="36px" class="icon-phone" />
           <span class="contact-text">01761-867763</span>
         </div>
       </div>
@@ -68,7 +68,7 @@
 /* Container for Content */
 .contact-container {
   text-align: center;
-  max-width: 800px;
+  max-width: 700px;
   padding: 40px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
@@ -77,7 +77,7 @@
 
 /* Heading */
 .contact-heading {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #00b4d8;
   margin-bottom: 20px;
@@ -85,7 +85,7 @@
 
 /* Subheading Text */
 .contact-subheading {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #bdc3c7;
   margin-bottom: 40px;
 }
@@ -100,12 +100,12 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .q-icon {
   color: #3498db;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 /* Social Media Buttons */
@@ -117,10 +117,10 @@
 }
 
 .social-btn {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: white;
   background-color: rgba(255, 255, 255, 0.15);
-  padding: 20px;
+  padding: 15px;
   border-radius: 50%;
   transition: transform 0.3s ease, background 0.3s ease;
 }
@@ -144,20 +144,50 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .contact-heading {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 
   .contact-subheading {
     font-size: 1rem;
+    padding: 0 20px;
   }
 
   .q-icon {
-    size: 40px;
+    font-size: 32px;
+    margin-right: 10px;
+  }
+
+  .contact-text {
+    font-size: 1rem;
   }
 
   .social-btn {
+    font-size: 1.5rem;
+    padding: 12px;
+  }
+
+  .social-links {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .contact-heading {
     font-size: 1.8rem;
-    padding: 15px;
+  }
+
+  .contact-subheading {
+    font-size: 0.9rem;
+  }
+
+  .social-btn {
+    font-size: 1.4rem;
+    padding: 10px;
   }
 }
 </style>
