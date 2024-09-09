@@ -12,14 +12,14 @@
 // to match your app's branding.
 // Tip: Use the "Theme Builder" on Quasar's documentation website.
 
-$primary   : #1976D2;
-$secondary : #26A69A;
-$accent    : #9C27B0;
+$primary: #2c3e50; // Navy color for primary (header, footer)
+$secondary: #3498db; // Blue for secondary elements like buttons and links
+$accent: #e74c3c; // Red accent for call-to-action buttons
+$dark: #34495e; // Darker shade for text and borders
+$positive: #27ae60; // Green for success messages
+$negative: #e74c3c; // Red for error messages
+$info: #3498db; // Blue for info messages
+$warning: #f1c40f; // Yellow for warnings
+$background: #ecf0f1; // Light gray background
 
-$dark      : #1D1D1D;
-$dark-page : #121212;
-
-$positive  : #21BA45;
-$negative  : #C10015;
-$info      : #31CCEC;
-$warning   : #F2C037;
+// Import Quasar's base styles

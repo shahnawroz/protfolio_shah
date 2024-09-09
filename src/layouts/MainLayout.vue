@@ -1,106 +1,210 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="hHh Lpr fFf">
+    <!-- Header -->
+    <q-header class="header bg-primary text-white">
       <q-toolbar>
+        <!-- Show the menu button only on mobile screens (below md) -->
         <q-btn
           flat
           dense
           round
           icon="menu"
           aria-label="Menu"
-          @click="toggleLeftDrawer"
+          @click="toggleDrawer"
+          class="q-mr-md"
+          v-if="!$q.screen.gt.md"
         />
-
-        <q-toolbar-title>
-          Quasar App
+        <q-toolbar-title class="logo text-bold">
+          <!-- Add your name or logo here -->
+          <span class="text-h5">Shah Nawrose</span>
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-space />
+        <!-- Desktop navigation links (shown only on large screens) -->
+        <q-btn
+          flat
+          :class="{ active: route.path === '/' }"
+          label="Home"
+          class="nav-btn"
+          :to="{ path: '/' }"
+          v-if="$q.screen.gt.md"
+        />
+        <q-btn
+          flat
+          :class="{ active: route.path === '/projects' }"
+          label="Projects"
+          class="nav-btn"
+          :to="{ path: '/projects' }"
+          v-if="$q.screen.gt.md"
+        />
+        <q-btn
+          flat
+          :class="{ active: route.path === '/skills' }"
+          label="Skills"
+          class="nav-btn"
+          :to="{ path: '/skills' }"
+          v-if="$q.screen.gt.md"
+        />
+        <q-btn
+          flat
+          :class="{ active: route.path === '/contact' }"
+          label="Contact"
+          class="nav-btn"
+          :to="{ path: '/contact' }"
+          v-if="$q.screen.gt.md"
+        />
       </q-toolbar>
     </q-header>
 
+    <!-- Mobile Drawer (side navigation) -->
     <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
+      v-model="drawer"
+      side="left"
       bordered
+      class="text-primary bg-dark drawer"
     >
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
+        <q-item clickable v-ripple :to="{ path: '/' }">
+          <q-item-section>Home</q-item-section>
+        </q-item>
+        <q-item clickable v-ripple :to="{ path: '/projects' }">
+          <q-item-section>Projects</q-item-section>
+        </q-item>
+        <q-item clickable v-ripple :to="{ path: '/skills' }">
+          <q-item-section>Skills</q-item-section>
+        </q-item>
+        <q-item clickable v-ripple :to="{ path: '/contact' }">
+          <q-item-section>Contact</q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
+    <!-- Main Content -->
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <!-- Footer -->
+    <q-footer class="bg-primary text-white q-pa-md q-pt-lg shadow-2 footer">
+      <div class="q-gutter-md text-center">
+        <div class="text-h6">© 2024</div>
+        <div class="text-h6">Shah Nawrose</div>
+        <div class="social-links">
+          <q-btn
+            flat
+            icon="mdi-linkedin"
+            class="social-btn"
+            href="https://linkedin.com"
+            target="_blank"
+            aria-label="LinkedIn"
+          />
+          <q-btn
+            flat
+            icon="mdi-github"
+            class="social-btn"
+            href="https://github.com"
+            target="_blank"
+            aria-label="GitHub"
+          />
+        </div>
+      </div>
+    </q-footer>
   </q-layout>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
+import { ref } from "vue";
+import { useRoute } from "vue-router";
 
-defineOptions({
-  name: 'MainLayout'
-})
+// Drawer state for mobile navigation
+const drawer = ref(false);
 
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
+// Function to toggle the drawer (for mobile screens)
+const toggleDrawer = () => {
+  drawer.value = !drawer.value;
+};
 
-const leftDrawerOpen = ref(false)
-
-function toggleLeftDrawer () {
-  leftDrawerOpen.value = !leftDrawerOpen.value
-}
+// Get the current route using useRoute
+const route = useRoute();
 </script>
+
+<style scoped>
+/* Header Styling */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-weight: bold;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Navigation Button Styles */
+.nav-btn {
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffcc00;
+}
+
+/* Active button class */
+.nav-btn.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffcc00; /* Active state color */
+}
+
+/* Mobile Drawer Styles */
+.drawer {
+  background-color: #1e2a38;
+}
+
+.drawer .q-item-section {
+  font-weight: bold;
+  color: white;
+}
+
+/* Footer Styling */
+.footer {
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-btn {
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: scale(1.2);
+  color: #ffcc00;
+}
+
+.q-footer {
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .nav-btn {
+    font-size: 0.9rem;
+  }
+}
+</style>
