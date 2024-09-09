@@ -51,7 +51,7 @@
 
 <script setup>
 const downloadCV = () => {
-  window.open("path-to-your-cv.pdf", "_blank");
+  window.open("src/assets/cv.pdf", "_blank");
 };
 </script>
 
