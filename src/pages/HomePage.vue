@@ -51,7 +51,10 @@
 
 <script setup>
 const downloadCV = () => {
-  window.open("src/assets/cv.pdf", "_blank");
+  window.open(
+    "https://drive.google.com/file/d/1XbSASS9QfxQe4MsZjXJxc-dlHxs1dgwm/view?usp=sharing",
+    "_blank"
+  );
 };
 </script>
 
