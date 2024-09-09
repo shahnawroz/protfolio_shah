@@ -1,130 +1,192 @@
 <template>
-  <q-page class="q-pa-md bg-dark text-white">
-    <!-- Title of the Projects Page -->
-    <h2 class="q-mb-lg text-center text-primary">My Projects</h2>
-
-    <!-- Projects Container -->
-    <div class="project-grid">
-      <!-- Project Cards -->
-      <q-card
-        v-for="project in projects"
-        :key="project.id"
-        bordered
-        flat
-        class="project-card q-mb-lg"
-      >
-        <q-img :src="project.image" class="project-image" />
-
-        <q-card-section>
-          <div class="text-h6">{{ project.title }}</div>
-          <div class="text-subtitle2">{{ project.description }}</div>
-
-          <!-- Technologies used in the project -->
-          <div class="q-mt-md">
-            <q-chip
-              v-for="tech in project.technologies"
-              :key="tech"
-              color="secondary"
-              class="q-mr-sm"
-            >
-              {{ tech }}
-            </q-chip>
+  <q-page class="bg-gradient text-white">
+    <div class="projects-container q-pa-md text-center">
+      <h2 class="projects-heading">My Projects</h2>
+      <div class="projects-grid">
+        <div
+          v-for="project in projects"
+          :key="project.name"
+          class="project-card"
+        >
+          <div class="project-image-placeholder">
+            <p class="project-title">{{ project.name }}</p>
           </div>
-        </q-card-section>
-
-        <q-card-actions align="right">
-          <q-btn
-            flat
-            label="View Project"
-            color="primary"
-            :href="project.link"
-            target="_blank"
-            icon="launch"
-          />
-        </q-card-actions>
-      </q-card>
+          <div class="project-details">
+            <div class="tech-stack">
+              <q-chip
+                v-for="tech in project.techStack"
+                :key="tech"
+                class="tech-chip"
+                color="primary"
+                label
+              >
+                {{ tech }}
+              </q-chip>
+            </div>
+            <q-btn
+              flat
+              label="View Project"
+              icon="open_in_new"
+              color="orange"
+              class="view-project-btn"
+              :to="project.link"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </q-page>
 </template>
 
 <script setup>
-import { ref } from "vue";
-
-// Projects data
-const projects = ref([
+const projects = [
   {
-    id: 1,
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio website built with Vue.js and Quasar Framework.",
-    image: "https://via.placeholder.com/400x200?text=Portfolio+Website",
-    technologies: ["Vue.js", "Quasar", "CSS"],
-    link: "https://github.com/johndoe/portfolio",
+    name: "Portfolio Website",
+    techStack: ["Vue.js", "Quasar", "CSS"],
+    link: "#",
   },
   {
-    id: 2,
-    title: "E-commerce Platform",
-    description:
-      "A full-stack e-commerce platform with Node.js, Vue.js, and MongoDB.",
-    image: "https://via.placeholder.com/400x200?text=E-commerce+Platform",
-    technologies: ["Vue.js", "Node.js", "MongoDB"],
-    link: "https://github.com/johndoe/ecommerce",
+    name: "E-commerce Platform",
+    techStack: ["Vue.js", "Node.js", "MongoDB"],
+    link: "#",
   },
   {
-    id: 3,
-    title: "Real-time Chat App",
-    description:
-      "A real-time chat application built with Vue.js, Socket.IO, and Node.js.",
-    image: "https://via.placeholder.com/400x200?text=Real-time+Chat+App",
-    technologies: ["Vue.js", "Node.js", "Socket.IO"],
-    link: "https://github.com/johndoe/chat-app",
+    name: "Real-time Chat App",
+    techStack: ["Vue.js", "Node.js", "Socket.IO"],
+    link: "#",
   },
   {
-    id: 4,
-    title: "Weather App",
-    description:
-      "A weather app that fetches real-time weather data from an external API.",
-    image: "https://via.placeholder.com/400x200?text=Weather+App",
-    technologies: ["Vue.js", "OpenWeather API", "Tailwind CSS"],
-    link: "https://github.com/johndoe/weather-app",
+    name: "Weather App",
+    techStack: ["Vue.js", "API", "CSS"],
+    link: "#",
   },
-  // Add more projects here
-]);
+];
 </script>
 
 <style scoped>
-/* Container for the project grid */
-.project-grid {
+/* Main Container */
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
 }
 
-/* Individual project card styling */
+/* Background Gradient */
+.bg-gradient {
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #1e2a38);
+  min-height: 100vh;
+}
+
+/* Projects Heading */
+.projects-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00b4d8;
+  margin-bottom: 40px;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Flexible column layout */
+  gap: 30px;
+  width: 100%;
+  justify-items: center;
+  padding: 0 20px;
+}
+
+/* Project Card */
 .project-card {
-  width: 100%;
-  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px; /* Fixed width */
+  height: 400px; /* Fixed height */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Project image styling */
-.project-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* Hover effect for project cards */
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive design for mobile screens */
-@media (max-width: 600px) {
+/* Project Image Placeholder */
+.project-image-placeholder {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Project Title */
+.project-title {
+  color: #ecf0f1;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Project Details */
+.project-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Tech Stack */
+.tech-stack {
+  margin-bottom: 20px;
+}
+
+/* Tech Chip */
+.tech-chip {
+  margin: 5px;
+  color: white !important;
+}
+
+/* View Project Button */
+.view-project-btn {
+  margin-top: 10px;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects-heading {
+    font-size: 2rem;
+  }
+
   .project-card {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  .project-image-placeholder {
+    height: 120px;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
   }
 }
 </style>

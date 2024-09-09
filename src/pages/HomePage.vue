@@ -4,9 +4,13 @@
     <section class="hero-section">
       <div class="hero-overlay">
         <div class="hero-content">
-          <h1 class="hero-heading">
-            Hello, I'm <span class="highlight">Shah Nawrose</span>
-          </h1>
+          <div>
+            <h1 class="hero-heading no-gap">
+              Hello, I'm<br />
+              <span class="text-orange">Shah Nawrose</span>
+            </h1>
+          </div>
+
           <p class="hero-description">
             A passionate full-stack software developer skilled in modern
             JavaScript frameworks like Vue.js and Quasar. I build scalable web
@@ -34,13 +38,12 @@
 
     <!-- Technologies Section -->
     <section class="technologies-section">
-      <h2 class="section-title">Technologies I Work With</h2>
+      <h2 class="section-title text-white">Technologies</h2>
       <div class="tech-grid">
-        <q-icon name="mdi-vuejs" size="50px" color="primary" />
-        <q-icon name="mdi-nodejs" size="50px" color="primary" />
-        <q-icon name="mdi-docker" size="50px" color="primary" />
-        <q-icon name="mdi-react" size="50px" color="primary" />
-        <q-icon name="mdi-github" size="50px" color="primary" />
+        <q-icon name="mdi-vuejs" size="50px" color="text-white" />
+        <q-icon name="mdi-nodejs" size="50px" color="text-white" />
+        <q-icon name="mdi-react" size="50px" color="text-white" />
+        <q-icon name="mdi-github" size="50px" color="text-white" />
       </div>
     </section>
   </q-page>
@@ -59,7 +62,7 @@ const downloadCV = () => {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-  background: #f5f6f7;
+  background: #1e3c72;
   font-family: "Poppins", sans-serif;
 }
 
@@ -76,10 +79,19 @@ const downloadCV = () => {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+/* Responsive behavior for background image */
+@media (max-width: 768px) {
+  .hero-section {
+    background-position: center;
+    background-size: cover;
+  }
 }
 
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #1e2a38);
   width: 100%;
   height: 100%;
   display: flex;
@@ -87,10 +99,11 @@ const downloadCV = () => {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  padding: 0 20px;
 }
 
 .hero-heading {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: white;
   margin-bottom: 20px;
@@ -145,9 +158,10 @@ const downloadCV = () => {
   transform: scale(1.2);
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-heading {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .hero-description {
@@ -157,6 +171,10 @@ const downloadCV = () => {
   .cta-buttons {
     flex-direction: column;
     gap: 15px;
+  }
+
+  .hero-section {
+    height: 60vh;
   }
 }
 </style>

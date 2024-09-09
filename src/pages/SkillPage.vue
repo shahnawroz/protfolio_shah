@@ -1,135 +1,190 @@
 <template>
-  <q-page class="q-pa-md bg-dark text-white">
-    <!-- Title of the Skills Page -->
-    <h2 class="q-mb-lg text-center text-info">My Skills</h2>
-
-    <!-- Skills Container -->
+  <q-page class="q-pa-md bg-gradient text-white">
     <div class="skills-container">
-      <!-- Skill Chips -->
-      <q-chip
-        v-for="skill in skills"
-        :key="skill.name"
-        color="primary"
-        text-color="white"
-        icon="code"
-        clickable
-        @click="showSkillInfo(skill)"
-        class="skill-chip"
-      >
-        {{ skill.name }}
-        <!-- Tooltip to show more info on hover -->
-        <q-tooltip>{{ skill.description }}</q-tooltip>
-      </q-chip>
+      <!-- Frontend Section -->
+      <div class="skills-section">
+        <h2 class="skills-heading">Frontend Skills</h2>
+        <div class="skills-grid">
+          <div
+            v-for="skill in frontendSkills"
+            :key="skill.name"
+            class="skill-card"
+          >
+            <q-icon :name="skill.icon" size="48px" class="skill-icon" />
+            <div class="skill-name">{{ skill.name }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend Section -->
+      <div class="skills-section">
+        <h2 class="skills-heading">Backend Skills</h2>
+        <div class="skills-grid">
+          <div
+            v-for="skill in backendSkills"
+            :key="skill.name"
+            class="skill-card"
+          >
+            <q-icon :name="skill.icon" size="48px" class="skill-icon" />
+            <div class="skill-name">{{ skill.name }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frameworks Section -->
+      <div class="skills-section">
+        <h2 class="skills-heading">Frameworks</h2>
+        <div class="skills-grid">
+          <div v-for="skill in frameworks" :key="skill.name" class="skill-card">
+            <q-icon :name="skill.icon" size="48px" class="skill-icon" />
+            <div class="skill-name">{{ skill.name }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Skills Section -->
+      <div class="skills-section">
+        <h2 class="skills-heading">Other Skills</h2>
+        <div class="skills-grid">
+          <div
+            v-for="skill in otherSkills"
+            :key="skill.name"
+            class="skill-card"
+          >
+            <q-icon :name="skill.icon" size="48px" class="skill-icon" />
+            <div class="skill-name">{{ skill.name }}</div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- Skill Info Modal Dialog -->
-    <q-dialog v-model="isModalOpen">
-      <q-card>
-        <q-card-section class="text-primary">
-          <div class="text-h6">{{ selectedSkill.name }}</div>
-          <div class="q-mt-sm">{{ selectedSkill.description }}</div>
-          <div class="q-mt-md">{{ selectedSkill.details }}</div>
-        </q-card-section>
-
-        <q-card-actions align="right">
-          <q-btn flat label="Close" color="primary" @click="closeModal" />
-        </q-card-actions>
-      </q-card>
-    </q-dialog>
   </q-page>
 </template>
 
 <script setup>
-import { ref } from "vue";
+const frontendSkills = [
+  { name: "HTML", icon: "mdi-language-html5" },
+  { name: "CSS", icon: "mdi-language-css3" },
+  { name: "JavaScript", icon: "mdi-language-javascript" },
+  { name: "Vue.js", icon: "mdi-vuejs" },
+  { name: "React", icon: "mdi-react" },
+];
 
-// Skill data with descriptions
-const skills = ref([
-  {
-    name: "Vue.js",
-    description: "A progressive JavaScript framework.",
-    details: "Vue.js is great for building interactive interfaces.",
-  },
-  {
-    name: "Quasar",
-    description: "A high-performance Vue.js framework.",
-    details: "Quasar Framework helps build responsive UIs.",
-  },
-  {
-    name: "JavaScript",
-    description: "A versatile programming language.",
-    details: "JavaScript is essential for modern web development.",
-  },
-  {
-    name: "Node.js",
-    description: "Server-side JavaScript runtime.",
-    details: "Node.js is widely used for backend applications.",
-  },
-  {
-    name: "MongoDB",
-    description: "NoSQL database for modern apps.",
-    details: "MongoDB is ideal for handling large datasets.",
-  },
-  {
-    name: "Git",
-    description: "Version control system.",
-    details: "Git helps manage code changes efficiently.",
-  },
-  {
-    name: "Docker",
-    description: "Container platform.",
-    details: "Docker is used to package applications into containers.",
-  },
-]);
+const backendSkills = [
+  { name: "Node.js", icon: "mdi-nodejs" },
+  { name: "Python", icon: "mdi-language-python" },
+  { name: "PHP", icon: "mdi-language-php" },
+  { name: "Java", icon: "mdi-language-java" },
+];
 
-// Modal state and functions
-const isModalOpen = ref(false);
-const selectedSkill = ref({});
+const frameworks = [
+  { name: "Quasar", icon: "mdi-quasar" },
+  { name: "Express.js", icon: "mdi-nodejs" },
+  { name: "Django", icon: "mdi-python" },
+  { name: "Spring Boot", icon: "mdi-language-java" },
+];
 
-const showSkillInfo = (skill) => {
-  selectedSkill.value = skill;
-  isModalOpen.value = true;
-};
-
-const closeModal = () => {
-  isModalOpen.value = false;
-};
+const otherSkills = [
+  { name: "C", icon: "mdi-language-c" },
+  { name: "C++", icon: "mdi-language-cpp" },
+  { name: "Git", icon: "mdi-git" },
+  { name: "Docker", icon: "mdi-docker" },
+];
 </script>
 
 <style scoped>
-/* Flexbox container to arrange chips */
+/* Main Container */
 .skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Style for individual skill chips */
-.skill-chip {
-  cursor: pointer;
-  padding: 12px 20px;
-  border-radius: 20px;
+/* Background Gradient */
+.bg-gradient {
+  background: linear-gradient(135deg, #1c3b57, #283e59, #1f1f3a);
+  min-height: 100vh;
+}
+
+/* Skills Section */
+.skills-section {
+  margin-bottom: 50px;
+}
+
+/* Section Heading */
+.skills-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00b4d8;
+  margin-bottom: 40px;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Multiple columns based on screen size */
+  gap: 30px;
+  width: 100%;
+}
+
+/* Skill Card */
+.skill-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  min-height: 200px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Hover effect for skill chips */
-.skill-chip:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive design for mobile devices */
-@media (max-width: 600px) {
-  .skills-container {
-    flex-direction: column;
-    align-items: center;
+/* Skill Icon */
+.skill-icon {
+  color: #f39c12;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  color: #00b4d8;
+}
+
+/* Skill Name */
+.skill-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr; /* Single column for mobile screens */
   }
-
-  .skill-chip {
-    width: 80%; /* Make chips fit well on mobile */
+  .skills-heading {
+    font-size: 2rem;
+  }
+  .skill-name {
+    font-size: 1.2rem;
   }
 }
 </style>

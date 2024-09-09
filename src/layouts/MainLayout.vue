@@ -1,8 +1,8 @@
 <template>
   <q-layout view="hHh Lpr fFf">
     <!-- Header -->
-    <q-header class="header bg-primary text-white">
-      <q-toolbar>
+    <q-header class="header text-white">
+      <q-toolbar class="text-white">
         <!-- Show the menu button only on mobile screens (below md) -->
         <q-btn
           flat
@@ -11,13 +11,14 @@
           icon="menu"
           aria-label="Menu"
           @click="toggleDrawer"
-          class="q-mr-md"
+          class="q-mr-sm"
           v-if="!$q.screen.gt.md"
         />
         <q-toolbar-title class="logo text-bold">
           <!-- Add your name or logo here -->
-          <span class="text-h5">Shah Nawrose</span>
+          <span class="text-h5 text-center">Shah Nawrose</span>
         </q-toolbar-title>
+
         <q-space />
         <!-- Desktop navigation links (shown only on large screens) -->
         <q-btn
@@ -84,7 +85,7 @@
     </q-page-container>
 
     <!-- Footer -->
-    <q-footer class="bg-primary text-white q-pa-md q-pt-lg shadow-2 footer">
+    <q-footer class="text-white q-pa-md q-pt-lg shadow-2 footer">
       <div class="q-gutter-md text-center">
         <div class="text-h6">© 2024</div>
         <div class="text-h6">Shah Nawrose</div>
@@ -118,12 +119,14 @@ const route = useRoute();
   right: 0;
   z-index: 999;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #1e2a38);
 }
 
 .logo {
   font-weight: bold;
   color: white;
   font-size: 1.5rem;
+  flex: none !important;
 }
 
 /* Navigation Button Styles */
@@ -131,7 +134,6 @@ const route = useRoute();
   color: white;
   font-weight: bold;
   font-size: 1rem;
-  transition: color 0.3s ease, background 0.3s ease;
 }
 
 .nav-btn:hover {
@@ -147,7 +149,7 @@ const route = useRoute();
 
 /* Mobile Drawer Styles */
 .drawer {
-  background-color: #1e2a38;
+  background: linear-gradient(135deg, #1c3b57, #283e59, #1f1f3a);
 }
 
 .drawer .q-item-section {
@@ -160,6 +162,7 @@ const route = useRoute();
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 40px;
   padding-top: 20px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #1e2a38);
 }
 
 .social-links {
@@ -178,7 +181,14 @@ const route = useRoute();
   transform: scale(1.2);
   color: #ffcc00;
 }
-
+.q-item.q-router-link--active,
+.q-item--active {
+  color: yellow !important;
+}
+.q-item.q-router-link,
+.q-item {
+  color: white !important;
+}
 .q-footer {
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
