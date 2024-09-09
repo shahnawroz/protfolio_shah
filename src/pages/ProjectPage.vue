@@ -153,6 +153,7 @@ const projects = [
 
 /* Tech Stack */
 .tech-stack {
+  display: flex;
   margin-bottom: 20px;
 }
 

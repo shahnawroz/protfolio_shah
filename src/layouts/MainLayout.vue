@@ -2,7 +2,7 @@
   <q-layout view="hHh Lpr fFf">
     <!-- Header -->
     <q-header class="header text-white">
-      <q-toolbar class="text-white">
+      <q-toolbar class="text-white drawer">
         <!-- Show the menu button only on mobile screens (below md) -->
         <q-btn
           flat
@@ -88,7 +88,6 @@
     <q-footer class="text-white q-pa-md q-pt-lg shadow-2 footer">
       <div class="q-gutter-md text-center">
         <div class="text-h6">© 2024</div>
-        <div class="text-h6">Shah Nawrose</div>
       </div>
     </q-footer>
   </q-layout>
@@ -149,7 +148,7 @@ const route = useRoute();
 
 /* Mobile Drawer Styles */
 .drawer {
-  background: linear-gradient(135deg, #1c3b57, #283e59, #1f1f3a);
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #1e2a38);
 }
 
 .drawer .q-item-section {
