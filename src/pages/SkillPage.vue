@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pa-md bg-gradient text-white">
+  <q-page class="bg-gradient text-white">
     <div class="skills-container">
       <!-- Frontend Section -->
       <div class="skills-section">
@@ -104,7 +104,7 @@ const otherSkills = [
 
 /* Background Gradient */
 .bg-gradient {
-  background: linear-gradient(135deg, #1c3b57, #283e59, #1f1f3a);
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #1e2a38);
   min-height: 100vh;
 }
 

@@ -1,6 +1,6 @@
 <template>
   <q-page class="bg-gradient text-white">
-    <div class="projects-container q-pa-md text-center">
+    <div class="projects-container text-left">
       <h2 class="projects-heading">My Projects</h2>
       <div class="projects-grid">
         <div
@@ -84,8 +84,6 @@ const projects = [
 .projects-heading {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #00b4d8;
-  margin-bottom: 40px;
 }
 
 /* Projects Grid */

@@ -1,5 +1,5 @@
 <template>
-  <q-page class="contact-page bg-dark">
+  <q-page class="contact-page">
     <div class="contact-container">
       <!-- Contact Section Heading -->
       <h1 class="contact-heading">Let's Connect</h1>
@@ -61,7 +61,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #1e3c72;
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #1e2a38);
   font-family: "Poppins", sans-serif;
 }
 
@@ -79,7 +79,7 @@
 .contact-heading {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #00b4d8;
+  color: orange;
   margin-bottom: 20px;
 }
 
