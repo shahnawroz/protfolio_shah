@@ -13,11 +13,13 @@
       <div class="contact-info">
         <div class="contact-item">
           <q-icon name="mdi-email-outline" size="36px" class="icon-email" />
-          <span class="contact-text">sh.nawrose@gmail.com</span>
+          <a href="mailto:sh.nawrose@gmail.com" class="contact-text"
+            >sh.nawrose@gmail.com</a
+          >
         </div>
         <div class="contact-item">
           <q-icon name="mdi-phone-outline" size="36px" class="icon-phone" />
-          <span class="contact-text">01761-867763</span>
+          <a href="tel:+8801761867763" class="contact-text">01761-867763</a>
         </div>
       </div>
 
@@ -41,11 +43,11 @@
         />
         <q-btn
           flat
-          icon="mdi-twitter"
-          class="social-btn twitter-btn"
-          href="https://twitter.com/yourusername"
+          icon="mdi-whatsapp"
+          class="social-btn whatsapp-btn"
+          href="https://wa.me/8801761867763"
           target="_blank"
-          aria-label="Twitter"
+          aria-label="Whatsapp"
         />
       </div>
     </div>
@@ -133,8 +135,8 @@
   background-color: #333;
 }
 
-.twitter-btn:hover {
-  background-color: #1da1f2;
+.whatsapp-btn:hover {
+  background-color: #1ebe5b;
 }
 
 .social-btn:hover {
@@ -159,6 +161,7 @@
 
   .contact-text {
     font-size: 1rem;
+    color: white;
   }
 
   .social-btn {

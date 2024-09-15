@@ -9,7 +9,7 @@
           class="project-card"
         >
           <div class="project-image-placeholder">
-            <p class="project-title">{{ project.name }}</p>
+            <p class="project-title text-center">{{ project.name }}</p>
           </div>
           <div class="project-details">
             <div class="tech-stack">
@@ -29,7 +29,8 @@
               icon="open_in_new"
               color="orange"
               class="view-project-btn"
-              :to="project.link"
+              :href="project.link"
+              target="_blank"
             />
           </div>
         </div>
@@ -41,24 +42,20 @@
 <script setup>
 const projects = [
   {
-    name: "Portfolio Website",
-    techStack: ["Vue.js", "Quasar", "CSS"],
-    link: "#",
+    name: "Abrar Awsaf Membership Vue",
+    techStack: ["Vue.js", "Quasar", "Sass"],
+    link: "https://member.abrarawsafagrofarm.com/#/",
   },
   {
-    name: "E-commerce Platform",
-    techStack: ["Vue.js", "Node.js", "MongoDB"],
-    link: "#",
+    name: "Mians Official Website",
+    techStack: ["React.js", "CSS"],
+    link: "https://wanna-be-coder.github.io/MIANS/",
   },
+
   {
-    name: "Real-time Chat App",
-    techStack: ["Vue.js", "Node.js", "Socket.IO"],
-    link: "#",
-  },
-  {
-    name: "Weather App",
-    techStack: ["Vue.js", "API", "CSS"],
-    link: "#",
+    name: "Marketing App",
+    techStack: ["Vue.js", "Quasar.js", "Sass"],
+    link: "https://onbez.com/",
   },
 ];
 </script>
@@ -82,18 +79,18 @@ const projects = [
 
 /* Projects Heading */
 .projects-heading {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: #fdfdfd;
+  margin-bottom: 40px;
 }
 
 /* Projects Grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(300px, 1fr)
-  ); /* Flexible column layout */
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
   width: 100%;
   justify-items: center;
   padding: 0 20px;
@@ -102,24 +99,24 @@ const projects = [
 /* Project Card */
 .project-card {
   background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   border-radius: 15px;
   padding: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 300px; /* Fixed width */
-  height: 400px; /* Fixed height */
+  width: 320px;
+  height: 420px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-15px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Project Image Placeholder */
@@ -132,15 +129,16 @@ const projects = [
   align-items: center;
   justify-content: center;
   color: #7f8c8d;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 
 /* Project Title */
 .project-title {
   color: #ecf0f1;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 /* Project Details */
@@ -160,19 +158,22 @@ const projects = [
 /* Tech Chip */
 .tech-chip {
   margin: 5px;
+  background: linear-gradient(135deg, #8e44ad, #3498db);
   color: white !important;
 }
 
 /* View Project Button */
 .view-project-btn {
   margin-top: 10px;
+
   color: #fff;
+  font-weight: bold;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .projects-heading {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .project-card {

@@ -71,23 +71,20 @@ const frontendSkills = [
 
 const backendSkills = [
   { name: "Node.js", icon: "mdi-nodejs" },
-  { name: "Python", icon: "mdi-language-python" },
   { name: "PHP", icon: "mdi-language-php" },
   { name: "Java", icon: "mdi-language-java" },
 ];
 
 const frameworks = [
-  { name: "Quasar", icon: "mdi-quasar" },
+  { name: "Quasar", icon: "mdi-star" },
   { name: "Express.js", icon: "mdi-nodejs" },
-  { name: "Django", icon: "mdi-python" },
-  { name: "Spring Boot", icon: "mdi-language-java" },
 ];
 
 const otherSkills = [
   { name: "C", icon: "mdi-language-c" },
   { name: "C++", icon: "mdi-language-cpp" },
   { name: "Git", icon: "mdi-git" },
-  { name: "Docker", icon: "mdi-docker" },
+  { name: "Dot Net", icon: "mdi-language-csharp" },
 ];
 </script>
 

@@ -26,7 +26,10 @@ module.exports = configure(function (/* ctx */) {
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
       // 'ionicons-v4',
-      // 'mdi-v7',
+
+      "mdi-v5", // Material Design Icons
+      "fontawesome-v5", // FontAwesome
+
       // 'fontawesome-v6',
       // 'eva-icons',
       // 'themify',
