@@ -161,7 +161,7 @@
 
   .contact-text {
     font-size: 1rem;
-    color: white;
+    color: white !important;
   }
 
   .social-btn {
