@@ -14,7 +14,7 @@
           <p class="hero-description">
             A skilled Front-End Developer with expertise in crafting dynamic,
             responsive, and user-friendly web applications using modern
-            JavaScript frameworks like Vue.js and Quasar. I specialize in
+            JavaScript frameworks like Vue.js, Quasar etc. I specialize in
             building scalable solutions that prioritize performance, usability,
             and design aesthetics to deliver a seamless user experience.
           </p>
