@@ -31,6 +31,14 @@
         />
         <q-btn
           flat
+          :class="{ active: route.path === '/about' }"
+          label="About Me"
+          class="nav-btn"
+          :to="{ path: '/about' }"
+          v-if="$q.screen.gt.md"
+        />
+        <q-btn
+          flat
           :class="{ active: route.path === '/projects' }"
           label="Projects"
           class="nav-btn"
@@ -45,6 +53,7 @@
           :to="{ path: '/skills' }"
           v-if="$q.screen.gt.md"
         />
+
         <q-btn
           flat
           :class="{ active: route.path === '/contact' }"
@@ -66,6 +75,9 @@
       <q-list>
         <q-item clickable v-ripple :to="{ path: '/' }">
           <q-item-section>Home</q-item-section>
+        </q-item>
+        <q-item clickable v-ripple :to="{ path: '/about' }">
+          <q-item-section>About Me</q-item-section>
         </q-item>
         <q-item clickable v-ripple :to="{ path: '/projects' }">
           <q-item-section>Projects</q-item-section>
