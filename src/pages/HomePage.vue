@@ -175,9 +175,5 @@ const downloadCV = () => {
     flex-direction: column;
     gap: 15px;
   }
-
-  .hero-section {
-    height: 60vh;
-  }
 }
 </style>
