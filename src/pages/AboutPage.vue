@@ -182,5 +182,8 @@ p {
     margin-left: auto;
     margin-right: auto;
   }
+  h3:hover {
+    color: white;
+  }
 }
 </style>
