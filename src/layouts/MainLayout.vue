@@ -73,19 +73,28 @@
       class="text-primary bg-dark drawer"
     >
       <q-list>
-        <q-item clickable v-ripple :to="{ path: '/' }">
+        <!-- Home Link -->
+        <q-item clickable v-ripple to="/" exact>
           <q-item-section>Home</q-item-section>
         </q-item>
-        <q-item clickable v-ripple :to="{ path: '/about' }">
+
+        <!-- About Me Link -->
+        <q-item clickable v-ripple to="/about">
           <q-item-section>About Me</q-item-section>
         </q-item>
-        <q-item clickable v-ripple :to="{ path: '/projects' }">
+
+        <!-- Projects Link -->
+        <q-item clickable v-ripple to="/projects">
           <q-item-section>Projects</q-item-section>
         </q-item>
-        <q-item clickable v-ripple :to="{ path: '/skills' }">
+
+        <!-- Skills Link -->
+        <q-item clickable v-ripple to="/skills">
           <q-item-section>Skills</q-item-section>
         </q-item>
-        <q-item clickable v-ripple :to="{ path: '/contact' }">
+
+        <!-- Contact Link -->
+        <q-item clickable v-ripple to="/contact">
           <q-item-section>Contact</q-item-section>
         </q-item>
       </q-list>
