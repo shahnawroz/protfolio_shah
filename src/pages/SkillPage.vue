@@ -1,14 +1,15 @@
 <template>
   <q-page class="bg-gradient text-white">
     <div class="skills-container">
-      <!-- Frontend Section -->
-      <div class="skills-section">
+      <!-- Frontend Section (comes from the left) -->
+      <div class="skills-section animate__animated animate__fadeInLeft">
         <h2 class="skills-heading">Frontend Skills</h2>
         <div class="skills-grid">
           <div
-            v-for="skill in frontendSkills"
+            v-for="(skill, index) in frontendSkills"
             :key="skill.name"
-            class="skill-card"
+            class="skill-card animate__animated animate__fadeInUp"
+            :style="{ animationDelay: `${index * 0.3}s` }"
           >
             <q-icon :name="skill.icon" size="48px" class="skill-icon" />
             <div class="skill-name">{{ skill.name }}</div>
@@ -16,14 +17,15 @@
         </div>
       </div>
 
-      <!-- Backend Section -->
-      <div class="skills-section">
+      <!-- Backend Section (comes from the right) -->
+      <div class="skills-section animate__animated animate__fadeInRight">
         <h2 class="skills-heading">Backend Skills</h2>
         <div class="skills-grid">
           <div
-            v-for="skill in backendSkills"
+            v-for="(skill, index) in backendSkills"
             :key="skill.name"
-            class="skill-card"
+            class="skill-card animate__animated animate__fadeInDown"
+            :style="{ animationDelay: `${index * 0.3}s` }"
           >
             <q-icon :name="skill.icon" size="48px" class="skill-icon" />
             <div class="skill-name">{{ skill.name }}</div>
@@ -32,10 +34,15 @@
       </div>
 
       <!-- Frameworks Section -->
-      <div class="skills-section">
+      <div class="skills-section animate__animated animate__fadeInLeft">
         <h2 class="skills-heading">Frameworks</h2>
         <div class="skills-grid">
-          <div v-for="skill in frameworks" :key="skill.name" class="skill-card">
+          <div
+            v-for="(skill, index) in frameworks"
+            :key="skill.name"
+            class="skill-card animate__animated animate__fadeInUp"
+            :style="{ animationDelay: `${index * 0.3}s` }"
+          >
             <q-icon :name="skill.icon" size="48px" class="skill-icon" />
             <div class="skill-name">{{ skill.name }}</div>
           </div>
@@ -43,13 +50,14 @@
       </div>
 
       <!-- Other Skills Section -->
-      <div class="skills-section">
+      <div class="skills-section animate__animated animate__fadeInRight">
         <h2 class="skills-heading">Other Skills</h2>
         <div class="skills-grid">
           <div
-            v-for="skill in otherSkills"
+            v-for="(skill, index) in otherSkills"
             :key="skill.name"
-            class="skill-card"
+            class="skill-card animate__animated animate__fadeInDown"
+            :style="{ animationDelay: `${index * 0.3}s` }"
           >
             <q-icon :name="skill.icon" size="48px" class="skill-icon" />
             <div class="skill-name">{{ skill.name }}</div>
@@ -89,6 +97,7 @@ const otherSkills = [
 </script>
 
 <style scoped>
+@import "animate.css";
 /* Main Container */
 .skills-container {
   max-width: 1200px;

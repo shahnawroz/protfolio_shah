@@ -1,12 +1,15 @@
 <template>
   <q-page class="bg-gradient text-white">
     <div class="projects-container text-left">
-      <h2 class="projects-heading">My Projects</h2>
+      <h2 class="projects-heading animate__animated animate__fadeInDown">
+        My Projects
+      </h2>
       <div class="projects-grid">
         <div
-          v-for="project in projects"
+          v-for="(project, index) in projects"
           :key="project.name"
-          class="project-card"
+          class="project-card animate__animated animate__fadeInLeft"
+          :style="{ animationDelay: `${index * 0.3}s` }"
         >
           <div class="project-image-placeholder">
             <p class="project-title text-center">{{ project.name }}</p>
@@ -51,7 +54,6 @@ const projects = [
     techStack: ["React.js", "CSS"],
     link: "https://wanna-be-coder.github.io/MIANS/",
   },
-
   {
     name: "Marketing App",
     techStack: ["Vue.js", "Quasar.js", "Sass"],
@@ -61,6 +63,8 @@ const projects = [
 </script>
 
 <style scoped>
+@import "animate.css";
+
 /* Main Container */
 .projects-container {
   max-width: 1200px;
@@ -112,8 +116,17 @@ const projects = [
   cursor: pointer;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
+/* Adding the animation delay with staggered effect */
+.project-card.animate__animated {
+  animation-fill-mode: both;
+}
+
+/* Hover Effect */
 .project-card:hover {
   transform: translateY(-15px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
@@ -165,7 +178,6 @@ const projects = [
 /* View Project Button */
 .view-project-btn {
   margin-top: 10px;
-
   color: #fff;
   font-weight: bold;
 }
