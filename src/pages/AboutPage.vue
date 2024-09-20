@@ -79,7 +79,7 @@ export default {
 @import "animate.css"; /* Import Animate.css */
 
 .about-page {
-  background-color: #1e3c72; /* Matches your portfolio background */
+  background-color: #1e3c72;
   padding: 3rem 0;
   color: white;
 }
@@ -87,39 +87,40 @@ export default {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem; /* Less padding for mobile */
 }
 
 h1 {
   text-align: center;
-  font-size: 3rem;
-  color: #58a6ff; /* Blue text for headings */
+  font-size: 2rem; /* Reduce font size for mobile */
+  color: #58a6ff;
   margin-bottom: 2rem;
 }
 
 .section-card {
-  background-color: #274880; /* Dark card background */
-  border: 1px solid #30363d; /* Border for card */
+  background-color: #274880;
+  border: 1px solid #30363d;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 1.5rem;
   margin-bottom: 2rem;
-  transition: transform 1s ease, box-shadow 1s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 1;
 }
 
 .section-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Hover effect */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.5rem; /* Adjusted for mobile */
   margin-bottom: 1rem;
-  color: white; /* Use blue color for subheadings */
+  color: white;
 }
 
 p {
   font-size: 1rem;
-  color: #c9d1d9; /* Light text for content */
+  color: #c9d1d9;
   line-height: 1.6;
 }
 
@@ -129,17 +130,57 @@ p {
 }
 
 h3 {
-  font-size: 1.25rem;
-  color: white; /* White text for job and education titles */
+  font-size: 1.2rem; /* Reduced slightly for mobile */
+  color: white;
   margin-bottom: 0.5rem;
-  transition: color 1s ease;
+  transition: color 0.3s ease;
 }
 
 h3:hover {
-  color: #eec900; /* Hover effect for job and education titles */
+  color: #eec900;
 }
 
 p {
   margin: 0.3rem 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .section-card {
+    padding: 1rem; /* Reduce padding inside cards for mobile */
+  }
+
+  h1 {
+    font-size: 1.75rem; /* Slightly smaller font for heading */
+  }
+
+  h2 {
+    font-size: 1.3rem; /* Smaller font for section titles */
+  }
+
+  h3 {
+    font-size: 1.1rem; /* Smaller font for job titles */
+    line-height: 2rem !important;
+  }
+
+  p {
+    font-size: 0.9rem; /* Smaller paragraph font */
+    margin: 1.3rem 0 !important;
+  }
+
+  .experience-item {
+    margin-bottom: 1rem; /* Reduce space between job entries */
+  }
+
+  /* Ensure section card fits the screen width properly */
+  .section-card {
+    width: 100%; /* Ensure card takes full width */
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 </style>
