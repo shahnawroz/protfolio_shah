@@ -12,11 +12,9 @@
           </div>
 
           <p class="hero-description">
-            A skilled Front-End Developer with expertise in crafting dynamic,
-            responsive, and user-friendly web applications using modern
-            JavaScript frameworks like Vue.js, Quasar etc. I specialize in
-            building scalable solutions that prioritize performance, usability,
-            and design aesthetics to deliver a seamless user experience.
+            Front-End Developer building responsive, scalable web applications
+            using Vue.js, Quasar, React, HTML, and JavaScript, with a focus on
+            performance and user experience.
           </p>
           <div class="cta-buttons">
             <q-btn
