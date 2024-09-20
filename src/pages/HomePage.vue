@@ -12,9 +12,11 @@
           </div>
 
           <p class="hero-description">
-            A passionate full-stack software developer skilled in modern
-            JavaScript frameworks like Vue.js and Quasar. I build scalable web
-            applications with real-world impact.
+            A skilled Front-End Developer with expertise in crafting dynamic,
+            responsive, and user-friendly web applications using modern
+            JavaScript frameworks like Vue.js and Quasar. I specialize in
+            building scalable solutions that prioritize performance, usability,
+            and design aesthetics to deliver a seamless user experience.
           </p>
           <div class="cta-buttons">
             <q-btn
