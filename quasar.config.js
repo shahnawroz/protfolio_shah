@@ -47,22 +47,37 @@ module.exports = configure(function (/* ctx */) {
         node: "node20",
       },
 
-      vueRouterMode: "hash", // hash mode for your router
-      publicPath: "protfolio_shah", // your public path
+      vueRouterMode: "hash",
+      publicPath: "protfolio_shah", // available values: 'hash', 'history'
+      // vueRouterBase,
+      // vueDevtools,
+      // vueOptionsAPI: false,
 
-      // Inject Google Analytics script globally into all pages
-      htmlVariables: {
-        analytics: `
-          <!-- Google tag (gtag.js) -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6STGCX00D"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-T6STGCX00D');
-          </script>
-        `,
-      },
+      // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
+
+      // publicPath: '/',
+      // analyze: true,
+      // env: {},
+      // rawDefine: {}
+      // ignorePublicFolder: true,
+      // minify: false,
+      // polyfillModulePreload: true,
+      // distDir
+
+      // extendViteConf (viteConf) {},
+      // viteVuePluginOptions: {},
+
+      vitePlugins: [
+        [
+          "vite-plugin-checker",
+          {
+            eslint: {
+              lintCommand: 'eslint "./**/*.{js,mjs,cjs,vue}"',
+            },
+          },
+          { server: false },
+        ],
+      ],
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
