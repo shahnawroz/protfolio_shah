@@ -20,14 +20,14 @@
             <q-btn
               label="View My Projects"
               color="primary"
-              class="q-mr-md hero-btn"
+              class="q-mr-md hero-btn animate__animated animate__fadeInLeft delay-1"
               icon="work"
               :to="{ path: '/projects' }"
             />
             <q-btn
               label="Download CV"
               color="secondary"
-              class="hero-btn"
+              class="hero-btn animate__animated animate__fadeInRight delay-2"
               icon="cloud_download"
               @click="downloadCV"
             />
@@ -40,10 +40,33 @@
     <section class="technologies-section">
       <h2 class="section-title text-white">Technologies</h2>
       <div class="tech-grid">
-        <q-icon name="mdi-vuejs" size="50px" color="text-white" />
-        <q-icon name="mdi-nodejs" size="50px" color="text-white" />
-        <q-icon name="mdi-react" size="50px" color="text-white" />
-        <q-icon name="mdi-github" size="50px" color="text-white" />
+        <!-- Technologies sliding from left -->
+        <q-icon
+          name="mdi-vuejs"
+          size="50px"
+          color="text-white"
+          class="animate__animated animate__fadeInLeft delay-1"
+        />
+        <q-icon
+          name="mdi-nodejs"
+          size="50px"
+          color="text-white"
+          class="animate__animated animate__fadeInLeft delay-2"
+        />
+
+        <!-- Technologies sliding from right -->
+        <q-icon
+          name="mdi-react"
+          size="50px"
+          color="text-white"
+          class="animate__animated animate__fadeInRight delay-3"
+        />
+        <q-icon
+          name="mdi-github"
+          size="50px"
+          color="text-white"
+          class="animate__animated animate__fadeInRight delay-4"
+        />
       </div>
     </section>
   </q-page>
@@ -59,6 +82,8 @@ const downloadCV = () => {
 </script>
 
 <style scoped>
+@import "animate.css";
+
 /* General Styling for the Home Page */
 .home-page {
   display: flex;
@@ -83,6 +108,22 @@ const downloadCV = () => {
   align-items: center;
   justify-content: center;
   position: relative;
+}
+/* Define delays for each technology icon animation */
+.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.delay-2 {
+  animation-delay: 0.5s;
+}
+
+.delay-3 {
+  animation-delay: 0.7s;
+}
+
+.delay-4 {
+  animation-delay: 0.9s;
 }
 
 /* Responsive behavior for background image */

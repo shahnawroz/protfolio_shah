@@ -16,49 +16,78 @@
         />
         <q-toolbar-title class="logo text-bold">
           <!-- Add your name or logo here -->
-          <span class="text-h5 text-center">Shah Nawrose</span>
+          <span
+            class="text-h5 text-center animate__animated animate__fadeInLeft"
+          >
+            Shah Nawrose
+          </span>
         </q-toolbar-title>
 
         <q-space />
+
         <!-- Desktop navigation links (shown only on large screens) -->
         <q-btn
           flat
-          :class="{ active: route.path === '/' }"
+          :class="[
+            'nav-btn',
+            { active: route.path === '/' },
+            'animate__animated',
+            'animate__fadeInRight',
+            'delay-1',
+          ]"
           label="Home"
-          class="nav-btn"
           :to="{ path: '/' }"
           v-if="$q.screen.gt.md"
         />
         <q-btn
           flat
-          :class="{ active: route.path === '/about' }"
+          :class="[
+            'nav-btn',
+            { active: route.path === '/about' },
+            'animate__animated',
+            'animate__fadeInRight',
+            'delay-2',
+          ]"
           label="About Me"
-          class="nav-btn"
           :to="{ path: '/about' }"
           v-if="$q.screen.gt.md"
         />
         <q-btn
           flat
-          :class="{ active: route.path === '/projects' }"
+          :class="[
+            'nav-btn',
+            { active: route.path === '/projects' },
+            'animate__animated',
+            'animate__fadeInRight',
+            'delay-3',
+          ]"
           label="Projects"
-          class="nav-btn"
           :to="{ path: '/projects' }"
           v-if="$q.screen.gt.md"
         />
         <q-btn
           flat
-          :class="{ active: route.path === '/skills' }"
+          :class="[
+            'nav-btn',
+            { active: route.path === '/skills' },
+            'animate__animated',
+            'animate__fadeInRight',
+            'delay-4',
+          ]"
           label="Skills"
-          class="nav-btn"
           :to="{ path: '/skills' }"
           v-if="$q.screen.gt.md"
         />
-
         <q-btn
           flat
-          :class="{ active: route.path === '/contact' }"
+          :class="[
+            'nav-btn',
+            { active: route.path === '/contact' },
+            'animate__animated',
+            'animate__fadeInRight',
+            'delay-5',
+          ]"
           label="Contact"
-          class="nav-btn"
           :to="{ path: '/contact' }"
           v-if="$q.screen.gt.md"
         />
@@ -131,6 +160,8 @@ const route = useRoute();
 </script>
 
 <style scoped>
+@import "animate.css";
+
 /* Header Styling */
 .header {
   position: fixed;
@@ -211,6 +242,26 @@ const route = useRoute();
 }
 .q-footer {
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+/* You can adjust the delays for each button */
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.3s;
+}
+
+.delay-3 {
+  animation-delay: 0.4s;
+}
+
+.delay-4 {
+  animation-delay: 0.5s;
+}
+
+.delay-5 {
+  animation-delay: 0.6s;
 }
 
 /* Media Queries for Responsive Design */
