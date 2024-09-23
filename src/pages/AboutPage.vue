@@ -7,7 +7,7 @@
       <div
         class="section-card introduction animate__animated animate__fadeInUp animate__delay-1s"
       >
-        <h2>👋 Hello! I'm Shahnawroz</h2>
+        <h2>👋 Hello! I'm Shah Nawrose</h2>
         <p>
           I’m a passionate web developer with a focus on building clean, modern
           web applications. I specialize in both frontend and backend
