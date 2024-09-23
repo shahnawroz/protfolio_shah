@@ -74,10 +74,14 @@
 
 <script setup>
 const downloadCV = () => {
-  window.open(
-    "https://drive.google.com/file/d/1Bps9rEcDBZ5hwT0M3npSbWYx1lV4wTgb/view?usp=sharing",
-    "_blank"
-  );
+  const cvUrl =
+    "https://drive.google.com/uc?export=download&id=1Bps9rEcDBZ5hwT0M3npSbWYx1lV4wTgb";
+  const link = document.createElement("a");
+  link.href = cvUrl;
+  link.setAttribute("download", "Shah_Nawrose_CV.pdf"); // Optional: Specify a download name
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };
 </script>
 
