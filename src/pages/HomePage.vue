@@ -75,7 +75,7 @@
 <script setup>
 const downloadCV = () => {
   window.open(
-    "https://drive.google.com/file/d/1XbSASS9QfxQe4MsZjXJxc-dlHxs1dgwm/view?usp=sharing",
+    "https://drive.google.com/file/d/1Bps9rEcDBZ5hwT0M3npSbWYx1lV4wTgb/view?usp=sharing",
     "_blank"
   );
 };
