@@ -69,19 +69,32 @@
         />
       </div>
     </section>
+    <div v-if="isLoading" class="loading-box">
+      <div class="loading-content">
+        <q-spinner-dots size="30px" color="white" />
+        <p>Downloading...</p>
+      </div>
+    </div>
   </q-page>
 </template>
 
 <script setup>
+import { ref } from "vue";
+const isLoading = ref(false);
 const downloadCV = () => {
-  const cvUrl =
-    "https://drive.google.com/uc?export=download&id=1Bps9rEcDBZ5hwT0M3npSbWYx1lV4wTgb";
-  const link = document.createElement("a");
-  link.href = cvUrl;
-  link.setAttribute("download", "Shah_Nawrose_CV.pdf"); // Optional: Specify a download name
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  isLoading.value = true;
+  setTimeout(() => {
+    const cvUrl =
+      "https://drive.google.com/uc?export=download&id=1Bps9rEcDBZ5hwT0M3npSbWYx1lV4wTgb";
+    const link = document.createElement("a");
+    link.href = cvUrl;
+    link.setAttribute("download", "Shah_Nawrose_CV.pdf"); // Optional: Specify a download name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    isLoading.value = false;
+  }, 1000);
 };
 </script>
 
@@ -205,7 +218,38 @@ const downloadCV = () => {
 .q-icon:hover {
   transform: scale(1.2);
 }
+.loading-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 9999; /* Make sure it's above everything */
+}
 
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 150px;
+  background: #254988;
+  border: 4px solid #254988; /* Border around the loading box */
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.loading-content p {
+  margin-top: 10px;
+  color: #ffffff;
+  font-size: 16px;
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-heading {
