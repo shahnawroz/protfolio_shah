@@ -85,10 +85,10 @@ const downloadCV = () => {
   isLoading.value = true;
   setTimeout(() => {
     const cvUrl =
-      "https://drive.google.com/uc?export=download&id=1Bps9rEcDBZ5hwT0M3npSbWYx1lV4wTgb";
+      "https://drive.google.com/uc?export=download&id=1YXcKoP3yRmOfACZGOosGqhi8eUhlXke8";
     const link = document.createElement("a");
     link.href = cvUrl;
-    link.setAttribute("download", "Shah_Nawrose_CV.pdf"); // Optional: Specify a download name
+    link.setAttribute("download", "Shah Nawrose (Resume).pdf"); // Optional: Specify a download name
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
