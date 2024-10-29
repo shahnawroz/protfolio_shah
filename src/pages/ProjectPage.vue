@@ -59,6 +59,26 @@ const projects = [
     techStack: ["Vue.js", "Quasar.js", "Sass"],
     link: "https://onbez.com/",
   },
+  {
+    name: "Adrar Awsaf E-commerce",
+    techStack: ["Next.js", "React", "Tailwind Css"],
+    link: "https://abrarawsafagrofarm.com/#/home",
+  },
+  {
+    name: "Daatti Home Collection",
+    techStack: ["Next.js", "React", "Tailwind Css"],
+    link: "https://www.daattihomecollection.com/",
+  },
+  {
+    name: "Motamot",
+    techStack: ["Next.js", "React", "Tailwind Css"],
+    link: "https://www.daattihomecollection.com/",
+  },
+  // {
+  //   name: "MIANS",
+  //   techStack: ["React.js", "Tailwind Css"],
+  //   link: "https://www.miansofficial.com/",
+  // },
 ];
 </script>
 
